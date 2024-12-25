@@ -59,9 +59,10 @@ Para visualizar la página, abre tu navegador web y accede a `http://localhost:3
 
 ## Miniatura
 
-![Mustra una previsualizacion de la página](/img/video_preview.avi)
+Incluye una imagen de la vista previa de la página para dar una mejor idea de su apariencia.
 
-Incluye un video de la vista previa de la página para dar una mejor idea de su apariencia.
+![Mustra una previsualizacion de la página](/img/image_preview.png)
+
 
 ## Contribuciones
 
