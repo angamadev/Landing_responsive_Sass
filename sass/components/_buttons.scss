@@ -1,0 +1,21 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.btn-header {
+    @include mixins.button(variables.$black-primary,variables.$blue-primary);
+}
+.btn-hero {
+    margin-top: 24px;
+    @include mixins.button-gradient(variables.$gradient-pink-orange,variables.$gradient-pink-orange-hover);    
+    }
+.btn-pink {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    color: variables.$pink-primary;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    align-items: normal;
+}
+

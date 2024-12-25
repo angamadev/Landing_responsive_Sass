@@ -1,0 +1,40 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+html * {
+    font-family: variables.$plus-jakarta;
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+
+}
+ 
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 20px;
+    @include mixins.breakpoint(desktopxl) {
+        background-image: variables.$gradient-bc-description;
+    }
+
+
+} 
+
+main {
+    @include mixins.breakpoint (tablet) {
+        padding: 24px 40px;
+    }
+
+
+    @include mixins.breakpoint (desktopxl) {
+        padding: 40px 165px;
+        background-image: url(../../img/hero-img.png);
+        background-repeat: no-repeat;
+        background-position: right -80px;
+    }
+
+}
+
+img {
+    width: 100%;
+}

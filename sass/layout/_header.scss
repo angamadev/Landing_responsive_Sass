@@ -1,0 +1,24 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+header.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+        & img:first-of-type {
+        width: 90px;
+        color: variables.$blue-primary;
+    }
+    @include mixins.breakpoint(tablet) {
+        padding: 24px 40px;  
+        }  
+    @include mixins.breakpoint(desktopxl) {
+        padding: 40px 165px; 
+        background-image: url(../../img/Rectangle.png);
+        background-repeat: no-repeat;
+        background-position-x: right; 
+    }            
+}
+

@@ -1,0 +1,7 @@
+@use "../abstracts/mixins";
+
+nav.nav-primary {
+   & ul {
+    @include mixins.reset-list();
+   } 
+}

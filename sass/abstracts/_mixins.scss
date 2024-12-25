@@ -1,0 +1,82 @@
+@use "variables";
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: variables.$bp-tablet) {
+      @content;
+    }
+  }
+
+
+  @if $bp == desktopxl {
+    @media (min-width: variables.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin button-white() {
+  display:inline-block;
+  background-color: variables.$white-primary;
+  color:$red-primary;
+  padding: 15px 40px;
+  text-decoration: underline;
+  border:0px;
+  &:hover{
+    color:variables.$black-primary;
+    border-radius: 15px;
+  }
+}
+
+@mixin button($bc-btn:variables.$black-primary,$bc-btn-hover:variables.$blue-primary) {
+  width: 150px;
+  padding: 9px 24px;
+  color: variables.$white-primary;
+  background-color: $bc-btn;
+  border-radius: 32px;
+  @include breakpoint(tablet) {
+    width: 167px;
+    height: 63px;
+    padding: 19px 32px;
+    }
+  @include breakpoint(desktopxl) {
+    width: 167px;
+    height: 63px;
+    padding: 19px 32px;
+    }
+    &:hover {
+      transition-duration: 1s;
+      background-color: $bc-btn-hover;
+  }
+}
+
+@mixin button-gradient($bc-grad,$bc-gradpink:$pink-grad) {
+  
+  @include button();
+  background-image: $bc-grad;
+  @include breakpoint(desktopxl) {
+    margin-top: 40px;
+  }
+
+  &:hover {
+    transition-duration: 1s;
+    background-image: $bc-gradpink;
+  }
+}
+
+@mixin reset-list() {   // Para resetear los NAV
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  & li {
+    list-style: none;
+    & a {
+      text-decoration: none;
+    }
+  }
+}
+
+
+

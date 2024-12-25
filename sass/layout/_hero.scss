@@ -1,0 +1,149 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+section.img-hero-principal {
+    display:flex;
+    flex-direction: column;
+    min-width: 60%;
+    @include mixins.breakpoint(tablet) {
+        flex-direction: row;
+        background-image: url(../../img/hero-img.png);
+        background-size: 45%;
+        background-repeat: no-repeat;
+        background-position: 85%;
+        justify-content: space-between;
+
+    }
+    @include mixins.breakpoint(desktopxl) {
+        flex-direction: row;
+        background-image: none;
+        background-size: 540px;
+        justify-content: space-between;
+        padding:0px;
+        background-position: 600px;
+
+
+    }
+
+}
+
+section.hero {
+    height: auto;
+    margin-top: 38px;
+    padding: 0px 16px;
+    @include mixins.breakpoint(tablet) {
+        margin-top: 100px;
+        max-width: 400px;
+    }
+    @include mixins.breakpoint(desktopxl) {
+        margin-top: 185px;
+        max-width: 457px;
+        padding:0px;
+        max-height:359px;
+    
+    }
+    h1 {
+        min-height: 101px;
+        font-size: 40px;
+        color: variables.$black-primary;
+        @include mixins.breakpoint(desktopxl) {
+            font-size: 56px;
+        }
+    }
+    p  {
+        color: variables.$grey-primary;
+        margin-top: 16px;
+        @include mixins.breakpoint(desktopxl) {
+            font-size: 18px;
+        }
+    }
+}
+.hero-img {
+    margin-top: 34px;
+    margin-left: 24px;
+    position: relative;
+    @include mixins.breakpoint(tablet) {
+        margin-left: 0px;
+    }
+    @include mixins.breakpoint(desktopxl) {
+        margin-top: 185px;
+        max-width: 457px;
+    }
+
+    .hero-img-movil {
+        margin: 36px 24px;
+        max-width: 290px;
+        @include mixins.breakpoint(tablet) {
+            display:none;
+        }
+    }
+    img.hero-tablet {
+        display: none;
+        position: absolute;
+        @include mixins.breakpoint(tablet) {
+            display:inline;
+            top:-80px;
+        }
+    }
+    div {
+        position: absolute;
+        padding: 16px 20px;
+        background-color: variables.$white-primary;
+        border-radius: 10px;
+        box-shadow: 2px 5px variables.$grey-primary;
+        @include mixins.breakpoint(desktopxl) {
+            padding: 20px 24px;
+        }
+
+
+        h3 {
+            color:variables.$grey-primary;
+            font-size: 14px;
+            @include mixins.breakpoint(desktopxl) {
+                font-size: 16px;
+            }
+
+        }
+        & .numbers {
+            place-items: center;
+            font-size: 32px;
+            color:variables.$black-primary;
+            font-weight: 800;
+            @include mixins.breakpoint(desktopxl) {
+                font-size: 40px;
+            }
+        }
+        &:first-child {
+            width: 100px;
+            right: 35px;
+            top:36px;
+            height: max-content;
+
+            @include mixins.breakpoint(tablet) {
+                right: 15px;
+                }
+            @include mixins.breakpoint(desktopxl) {
+                right: -64px;
+                top: -60px;
+                width: 155px;
+                }
+            
+        }
+        &:last-child{
+            bottom:40px;
+            left: 10px;
+            width: 145px;
+            height: max-content;
+
+            @include mixins.breakpoint(tablet) {
+                bottom: -50px;
+                left: -50px;
+            }
+            @include mixins.breakpoint(desktopxl) {
+                left: -30px;
+                width: 200px;
+            }
+    
+        }    
+    }
+}

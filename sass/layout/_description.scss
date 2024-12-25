@@ -1,0 +1,94 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+section.description {
+    margin-top: 66px;
+    padding-bottom: 66px;
+    padding-left:16px;
+    padding-right: 16px;
+    background-image: variables.$gradient-bc-description;
+    text-align: center;
+    @include mixins.breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:32px 10px;
+    }
+    @include mixins.breakpoint(desktopxl) {
+        margin-top: 224px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:56px 30px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    article {
+        margin: 40px 0px;
+        background-color: variables.$white-transp;
+        text-align: left;
+        padding: 40px 28px;
+        position: relative;
+        width: 100%;
+        padding-bottom: 32px;
+        @include mixins.breakpoint(tablet) {
+            height: 243px;
+            margin: 0px;
+            margin-top:24px;
+            padding: 40px 32px;
+        }
+        @include mixins.breakpoint(desktopxl) {
+            height: 322px;
+            margin: 0px;
+            padding: 40px 32px;
+        }
+
+
+        &.description-bg {
+            margin:0px;
+            background-image: variables.$gradient-pink-orange;
+            color: variables.$white-primary;
+            padding: 26px 28px;
+            font-size: 24px;
+            font-weight: 800;
+            border-radius: 10px;
+            @include mixins.breakpoint(tablet) {
+                padding: 56px 32px;
+            }
+            @include mixins.breakpoint(desktopxl) {
+                font-size: 32px;
+            }
+    
+        }
+        img {
+            width: 56px;
+            position: absolute;
+            top:-24px;
+            @include mixins.breakpoint(desktopxl){
+                top:-24px;
+
+            }
+        }
+        h3 {
+            font-family: variables.$black-primary;
+            font-size: 20px;
+            font-weight: 800;
+            margin-top:24px;
+            @include mixins.breakpoint(desktopxl){
+                font-size: 24px;
+                margin-top:32px;
+            }
+        }
+        p {
+            color: variables.$grey-primary;
+            font-size: 16px;
+            margin-top:16px;
+            @include mixins.breakpoint(desktopxl){
+                font-size: 18px;
+                margin-top:24px;
+            }
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+}

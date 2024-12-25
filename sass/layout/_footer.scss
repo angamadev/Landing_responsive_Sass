@@ -1,0 +1,28 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.footer {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: variables.$black-primary;
+    padding: 36px 16px;
+    & img:first-of-type {
+        width: 90px;
+        color: variables.$blue-primary;
+    }
+    button{
+        @include mixins.button-gradient(variables.$gradient-pink-blue,variables.$gradient-pink-blue-hover);
+        @include mixins.breakpoint (desktopxl) {
+            margin-top:0px;
+        }
+            
+    }
+    @include mixins.breakpoint(tablet) {
+        padding: 36px 40px;
+    }
+    @include mixins.breakpoint (desktopxl) {
+        padding: 32px 165px;
+    }
+}
